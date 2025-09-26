@@ -102,7 +102,6 @@
             margin-top: 20px;
         }
 
-        
         /* Project Sections */
         .project-section {
             margin-bottom: 40px;
@@ -153,21 +152,25 @@
             cursor: pointer;
             flex-shrink: 0;
             position: relative;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
         }
 
         .project-hero-card {
             min-width: 320px;
-            background: #000;
             color: #fff;
-            border-radius: 15px;
             overflow: hidden;
             position: relative;
             display: flex;
             flex-direction: column;
-            border: 2px solid #333;
         }
-        
-          .project-hero-image {
+
+        .project-hero-image {
             width: 100%;
             height: 200px;
             display: flex;
@@ -175,21 +178,20 @@
             justify-content: center;
             position: relative;
         }
-        
+
         .project-hero-image img {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
+            width: 100%;
+            height: 100%;
             object-fit: contain;
         }
-        
+
         .project-hero-content {
             padding: 20px;
-            background: #000;
             text-align: left;
+            position: relative;
+            z-index: 2;
         }
-        
+
         .project-hero-content h3 {
             font-size: 18px;
             font-weight: 700;
@@ -198,22 +200,18 @@
             margin-bottom: 10px;
             line-height: 1.2;
         }
-        
+
+        .project-hero-content em {
+            font-style: italic;
+            font-weight: 400;
+            text-transform: lowercase;
+        }
+
         .project-hero-content p {
             font-size: 12px;
             opacity: 0.8;
             line-height: 1.4;
             font-weight: 300;
-        }
-
-        .project-card {
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            text-align: center;
         }
 
         .project-card h3 {
@@ -392,7 +390,7 @@
         }
 
         /* Project card backgrounds */
-        .project-card img, .project-hero-card img {
+        .project-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -402,7 +400,7 @@
             z-index: 1;
         }
 
-        .project-card-content, .project-hero-content {
+        .project-card-content {
             position: relative;
             z-index: 2;
             border-radius: inherit;
@@ -413,15 +411,6 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-        }
-
-        .project-hero-card {
-            background-image: none;
-            position: relative;
-        }
-
-        .mybox-card {
-            background-image: none;
         }
     </style>
 </head>
@@ -451,6 +440,7 @@
 
         <!-- 5+ Years Projects -->
         <section class="project-section">
+            <div class="section-label">5+ years</div>
             <div class="project-container">
                 <div class="project-carousel">
                     <div class="project-group">
@@ -485,11 +475,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="nav-arrows">
+                    <div class="nav-arrow">←</div>
+                    <div class="nav-arrow">→</div>
+                </div>
             </div>
         </section>
 
         <!-- 3+ Years Projects -->
         <section class="project-section">
+            <div class="section-label">3+ years</div>
             <div class="project-container">
                 <div class="project-carousel">
                     <div class="project-group">
@@ -499,7 +494,7 @@
                             </div>
                             <div class="project-hero-content">
                                 <h3>UNTAMED<br><em>humans</em></h3>
-                                <p>A startup skincare brand focusing on personalized products and experiences</p>
+                                <p>Led comprehensive brand management for individualized skincare company.</p>
                             </div>
                         </div>
                         <div class="project-card">
@@ -524,17 +519,22 @@
                         </div>
                     </div>
                 </div>
+                <div class="nav-arrows">
+                    <div class="nav-arrow">←</div>
+                    <div class="nav-arrow">→</div>
+                </div>
             </div>
         </section>
 
         <!-- 1 Year Projects -->
         <section class="project-section">
+            <div class="section-label">1 year</div>
             <div class="project-container">
                 <div class="project-carousel">
                     <div class="project-group">
                         <div class="project-card project-hero-card">
                             <div class="project-hero-image">
-                            <img src="https://github.com/shaircon/portfolio/blob/main/images/projects/TF7%20Logo.png?raw=true" alt="TF7 Logo">
+                                <img src="https://github.com/shaircon/portfolio/blob/main/images/projects/TF7%20Logo.png?raw=true" alt="TF7 Logo">
                             </div>
                             <div class="project-hero-content">
                                 <h3>TWENTY<br>FOUR<br>7</h3>
@@ -562,6 +562,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="nav-arrows">
+                    <div class="nav-arrow">←</div>
+                    <div class="nav-arrow">→</div>
                 </div>
             </div>
         </section>
@@ -596,60 +600,60 @@
         </section>
     </div>
 
-   <script>
-    const interests = [
-        { name: "GeoGuessr", url: "https://geoguessr.com" },
-        { name: "NY Times Crosswords", url: "https://www.nytimes.com/crosswords" }
-    ];
+    <script>
+        const interests = [
+            { name: "GeoGuessr", url: "https://geoguessr.com" },
+            { name: "NY Times Crosswords", url: "https://www.nytimes.com/crosswords" }
+        ];
 
-    function shuffleInterests() {
-        const randomInterest = interests[Math.floor(Math.random() * interests.length)];
-        const resultDiv = document.getElementById('shuffleResult');
-        resultDiv.innerHTML = `<a href="${randomInterest.url}" target="_blank">${randomInterest.name}</a>`;
-    }
+        function shuffleInterests() {
+            const randomInterest = interests[Math.floor(Math.random() * interests.length)];
+            const resultDiv = document.getElementById('shuffleResult');
+            resultDiv.innerHTML = `<a href="${randomInterest.url}" target="_blank">${randomInterest.name}</a>`;
+        }
 
-    // Scroll functionality for carousels
-    document.querySelectorAll('.nav-arrow').forEach(arrow => {
-        arrow.addEventListener('click', function() {
-            const carousel = this.parentElement.previousElementSibling;
-            const scrollAmount = 250;
-            
-            if (arrow.textContent === '←') {
-                carousel.scrollLeft -= scrollAmount;
-            } else {
-                carousel.scrollLeft += scrollAmount;
-            }
+        // Scroll functionality for carousels
+        document.querySelectorAll('.nav-arrow').forEach(arrow => {
+            arrow.addEventListener('click', function() {
+                const carousel = this.parentElement.previousElementSibling;
+                const scrollAmount = 250;
+                
+                if (arrow.textContent === '←') {
+                    carousel.scrollLeft -= scrollAmount;
+                } else {
+                    carousel.scrollLeft += scrollAmount;
+                }
+            });
         });
-    });
 
-    // Logo rotation functionality
-function rotateLogo() {
-    const headerLogo = document.querySelector('.logo img');
-    const interestImages = [
-        'https://github.com/shaircon/portfolio/blob/main/images/logos-icons/b%20logo.png?raw=true',
-        'https://github.com/shaircon/portfolio/blob/main/images/interests/Mtn%20Image.png?raw=true',
-        'https://github.com/shaircon/portfolio/blob/main/images/interests/Bike%20Image.png?raw=true',
-        'https://github.com/shaircon/portfolio/blob/main/images/interests/Fish%20Image.png?raw=true',
-        'https://github.com/shaircon/portfolio/blob/main/images/interests/Camera%20Image.png?raw=true',
-        'https://github.com/shaircon/portfolio/blob/main/images/interests/Tennis%20Image.png?raw=true',
-        'https://github.com/shaircon/portfolio/blob/main/images/interests/Hockey%20Image.png?raw=true'
-    ];
-    
-    let currentIndex = 0;
-    
-    // Wait 5 seconds before starting rotation
-    setTimeout(() => {
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % interestImages.length;
-            if (headerLogo) {
-                headerLogo.src = interestImages[currentIndex];
-            }
-        }, 2000);
-    }, 3000);
-}
+        // Logo rotation functionality
+        function rotateLogo() {
+            const headerLogo = document.querySelector('.logo img');
+            const interestImages = [
+                'https://github.com/shaircon/portfolio/blob/main/images/logos-icons/b%20logo.png?raw=true',
+                'https://github.com/shaircon/portfolio/blob/main/images/interests/Mtn%20Image.png?raw=true',
+                'https://github.com/shaircon/portfolio/blob/main/images/interests/Bike%20Image.png?raw=true',
+                'https://github.com/shaircon/portfolio/blob/main/images/interests/Fish%20Image.png?raw=true',
+                'https://github.com/shaircon/portfolio/blob/main/images/interests/Camera%20Image.png?raw=true',
+                'https://github.com/shaircon/portfolio/blob/main/images/interests/Tennis%20Image.png?raw=true',
+                'https://github.com/shaircon/portfolio/blob/main/images/interests/Hockey%20Image.png?raw=true'
+            ];
+            
+            let currentIndex = 0;
+            
+            // Wait 3 seconds before starting rotation
+            setTimeout(() => {
+                setInterval(() => {
+                    currentIndex = (currentIndex + 1) % interestImages.length;
+                    if (headerLogo) {
+                        headerLogo.src = interestImages[currentIndex];
+                    }
+                }, 2000);
+            }, 3000);
+        }
 
-    // Start logo rotation when page loads
-document.addEventListener('DOMContentLoaded', rotateLogo);
-</script>
+        // Start logo rotation when page loads
+        document.addEventListener('DOMContentLoaded', rotateLogo);
+    </script>
 </body>
 </html>
