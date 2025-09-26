@@ -156,35 +156,53 @@
         }
 
         .project-hero-card {
-            min-width: 280px;
+            min-width: 320px;
+            background: #000;
             color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #333;
+        }
+        
+        .project-hero-image {
+            width: 100%;
+            height: 200px;
+            background: #1a1a1a;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 25px;
+            border-bottom: 1px solid #333;
+            position: relative;
         }
-
-        .project-hero-card h3 {
-            font-size: 24px;
+        
+        .project-hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .project-hero-content {
+            padding: 20px;
+            background: #000;
+            text-align: left;
+        }
+        
+        .project-hero-content h3 {
+            font-size: 18px;
             font-weight: 700;
-            text-align: center;
-            line-height: 0.9;
-            letter-spacing: 1px;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            line-height: 1.2;
         }
-
-        .project-hero-card em {
-            font-style: italic;
-            font-weight: 400;
-            text-transform: lowercase;
-        }
-
-        .project-hero-card p {
-            font-size: 11px;
-            opacity: 0.6;
-            text-align: center;
-            margin-top: 12px;
-            line-height: 1.3;
+        
+        .project-hero-content p {
+            font-size: 12px;
+            opacity: 0.8;
+            line-height: 1.4;
             font-weight: 300;
         }
 
@@ -437,10 +455,12 @@
                 <div class="project-carousel">
                     <div class="project-group">
                         <div class="project-card project-hero-card">
-                            <img src="https://github.com/shaircon/portfolio/blob/main/images/projects/MTB%20Logo.png?raw=true" alt="MyBox Project">
+                            <div class="project-hero-image">
+                                <img src="https://github.com/shaircon/portfolio/blob/main/images/projects/MTB%20Logo.png?raw=true" alt="MyBox Project">
+                            </div>
                             <div class="project-hero-content">
                                 <h3>MYBOX</h3>
-                                <p>A digital marketing tool built for franchises with integrated campaigns and data tracking.</p>
+                                <p>A digital marketing tool for brands, designed to create playtime with their audience. Extending engagement time, marketing budgets, and LTV.</p>
                             </div>
                         </div>
                         <div class="project-card">
@@ -474,9 +494,12 @@
                 <div class="project-carousel">
                     <div class="project-group">
                         <div class="project-card project-hero-card">
-                            <img src="https://github.com/shaircon/portfolio/blob/main/images/projects/Untamed%20Logo.png?raw=true" alt="Untamed Humans">
+                            <div class="project-hero-image">
+                                <img src="https://github.com/shaircon/portfolio/blob/main/images/projects/Untamed%20Logo.png?raw=true" alt="Untamed Humans">
+                            </div>
                             <div class="project-hero-content">
                                 <h3>UNTAMED<br><em>humans</em></h3>
+                                <p>A startup skincare brand focusing on personalized products and experiences</p>
                             </div>
                         </div>
                         <div class="project-card">
@@ -510,7 +533,9 @@
                 <div class="project-carousel">
                     <div class="project-group">
                         <div class="project-card project-hero-card">
+                            <div class="project-hero-image">
                             <img src="https://github.com/shaircon/portfolio/blob/main/images/projects/TF7%20Logo.png?raw=true" alt="TF7 Logo">
+                            </div>
                             <div class="project-hero-content">
                                 <h3>TWENTY<br>FOUR<br>7</h3>
                                 <p>Experience design for modern lifestyle brand.</p>
