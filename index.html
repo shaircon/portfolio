@@ -600,30 +600,33 @@
     });
 
     // Logo rotation functionality
-    function rotateLogo() {
-        const headerLogo = document.querySelector('.logo img');
-        const interestImages = [
-            'https://github.com/shaircon/portfolio/blob/main/images/logos-icons/b%20logo.png?raw=true',
-            'https://github.com/shaircon/portfolio/blob/main/images/interests/Mtn%20Image.png?raw=true',
-            'https://github.com/shaircon/portfolio/blob/main/images/interests/Bike%20Image.png?raw=true',
-            'https://github.com/shaircon/portfolio/blob/main/images/interests/Fish%20Image.png?raw=true',
-            'https://github.com/shaircon/portfolio/blob/main/images/interests/Camera%20Image.png?raw=true',
-            'https://github.com/shaircon/portfolio/blob/main/images/interests/Tennis%20Image.png?raw=true',
-            'https://github.com/shaircon/portfolio/blob/main/images/interests/Hockey%20Image.png?raw=true'
-        ];
-        
-        let currentIndex = 0;
-        
+function rotateLogo() {
+    const headerLogo = document.querySelector('.logo img');
+    const interestImages = [
+        'https://github.com/shaircon/portfolio/blob/main/images/logos-icons/b%20logo.png?raw=true',
+        'https://github.com/shaircon/portfolio/blob/main/images/interests/Mtn%20Image.png?raw=true',
+        'https://github.com/shaircon/portfolio/blob/main/images/interests/Bike%20Image.png?raw=true',
+        'https://github.com/shaircon/portfolio/blob/main/images/interests/Fish%20Image.png?raw=true',
+        'https://github.com/shaircon/portfolio/blob/main/images/interests/Camera%20Image.png?raw=true',
+        'https://github.com/shaircon/portfolio/blob/main/images/interests/Tennis%20Image.png?raw=true',
+        'https://github.com/shaircon/portfolio/blob/main/images/interests/Hockey%20Image.png?raw=true'
+    ];
+    
+    let currentIndex = 0;
+    
+    // Wait 5 seconds before starting rotation
+    setTimeout(() => {
         setInterval(() => {
             currentIndex = (currentIndex + 1) % interestImages.length;
             if (headerLogo) {
                 headerLogo.src = interestImages[currentIndex];
             }
         }, 1000);
-    }
+    }, 5000);
+}
 
     // Start logo rotation when page loads
-    document.addEventListener('DOMContentLoaded', rotateLogo);
+document.addEventListener('DOMContentLoaded', rotateLogo);
 </script>
 </body>
 </html>
