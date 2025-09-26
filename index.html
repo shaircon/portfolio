@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brad Bourgeois - Product Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Reem Kufi', sans-serif;
+            background-color: #2a2a2a;
+            color: #fff;
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 40px;
+            position: relative;
+            background-color: #2a2a2a;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: #fff;
+            border-radius: 1px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 40px;
+            background-color: #2a2a2a;
+            margin-bottom: 60px;
+        }
+
+        .hero-text {
+            max-width: none;
+            margin-bottom: 50px;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            line-height: 1.3;
+            max-width: 900px;
+        }
+
+        .hero .tldr {
+            font-size: 16px;
+            font-weight: 400;
+            opacity: 0.85;
+            max-width: 800px;
+            margin-top: 20px;
+        }
+
+        /* Photo Carousel */
+        .photo-carousel {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 0;
+            margin-bottom: 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .photo-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .photo-item {
+            min-width: 280px;
+            height: 180px;
+            border-radius: 12px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Project Sections */
+        .project-section {
+            margin-bottom: 40px;
+            padding: 0 40px;
+        }
+
+        .section-label {
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 12px;
+            text-transform: lowercase;
+            letter-spacing: 0.5px;
+            font-weight: 400;
+            padding-left: 0;
+        }
+
+        .project-container {
+            background: #000;
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+        }
+
+        .project-carousel {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .project-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .project-group {
+            display: flex;
+            gap: 15px;
+            min-width: fit-content;
+        }
+
+        .project-card {
+            min-width: 200px;
+            height: 280px;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            flex-shrink: 0;
+            position: relative;
+            background: #1a1a1a;
+            border: 1px solid #333;
+        }
+
+        .project-hero-card {
+            min-width: 280px;
+            background: #1a1a1a;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            border: 1px solid #333;
+        }
+
+        .project-hero-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 0.9;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .project-hero-card em {
+            font-style: italic;
+            font-weight: 400;
+            text-transform: lowercase;
+        }
+
+        .project-hero-card p {
+            font-size: 11px;
+            opacity: 0.6;
+            text-align: center;
+            margin-top: 12px;
+            line-height: 1.3;
+            font-weight: 300;
+        }
+
+        .project-card {
+            background: #1a1a1a;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        .project-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            line-height: 1.1;
+        }
+
+        .project-card .subtitle {
+            font-size: 10px;
+            opacity: 0.5;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 300;
+        }
+
+        .project-card p {
+            font-size: 12px;
+            line-height: 1.3;
+            opacity: 0.7;
+            font-weight: 300;
+        }
+
+        /* Navigation Arrows */
+        .nav-arrows {
+            display: flex;
+            gap: 6px;
+            margin-top: 12px;
+            justify-content: flex-start;
+        }
+
+        .nav-arrow {
+            width: 28px;
+            height: 28px;
+            background: transparent;
+            border: 1px solid #444;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #666;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+
+        .nav-arrow:hover {
+            border-color: #888;
+            color: #888;
+        }
+
+        /* Interest Icons Section */
+        .interests-section {
+            margin: 80px 40px 60px;
+        }
+
+        .interests-container {
+            background: #000;
+            padding: 60px 40px;
+            border-radius: 20px;
+            position: relative;
+            text-align: center;
+        }
+
+        .logo-center {
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 600;
+            color: #000;
+            margin: 0 auto 40px;
+        }
+
+        .interest-icons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .interest-icon {
+            width: 60px;
+            height: 60px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 16px;
+            font-weight: 600;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .interest-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Placeholder card styling */
+        .placeholder-card {
+            background: #333 !important;
+            opacity: 0.4;
+        }
+
+        .placeholder-card h3 {
+            opacity: 0.7;
+        }
+
+        /* Mystery link styling */
+        .mystery-link {
+            color: #fff;
+            text-decoration: underline;
+            cursor: pointer;
+            font-weight: 400;
+        }
+
+        .mystery-link:hover {
+            opacity: 0.8;
+        }
+
+        /* Shuffle result */
+        .shuffle-result {
+            margin-top: 20px;
+            font-size: 14px;
+            min-height: 20px;
+        }
+
+        .shuffle-result a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+            
+            .hero {
+                padding: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 24px;
+            }
+            
+            .project-section {
+                padding: 0 20px;
+            }
+            
+            .interests-section {
+                margin: 40px 20px;
+            }
+            
+            .interests-container {
+                padding: 40px 20px;
+            }
+        }
+
+        /* Project card backgrounds */
+        .project-card img, .project-hero-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .project-card-content, .project-hero-content {
+            position: relative;
+            z-index: 2;
+            background: rgba(0,0,0,0.7);
+            border-radius: inherit;
+            padding: inherit;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .project-hero-card {
+            background-image: none;
+            position: relative;
+        }
+
+        .mybox-card {
+            background-image: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">b</div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Hi I'm Brad. I am a Product Manager and few other things.<br>Check out some work I've done, a collection of my interests, or this <span class="mystery-link" onclick="shuffleInterests()">mystery link</span>.</h1>
+                
+                <p class="tldr">TL;DR The joy in the work is the process. Mostly driven by curiosity. Jack of all trades, master of none but I swear I'm close.</p>
+                
+                <div class="shuffle-result" id="shuffleResult"></div>
+            </div>
+
+            <!-- Photo Carousel -->
+            <div class="photo-carousel">
+                <div class="photo-item">
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px;">Team Photo</div>
+                </div>
+                <div class="photo-item">
+                    <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px;">Office Space</div>
+                </div>
+                <div class="photo-item">
+                    <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px;">Collaboration</div>
+                </div>
+                <div class="photo-item">
+                    <div style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px;">Event</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5+ Years Projects -->
+        <section class="project-section">
+            <div class="section-label">5+ years</div>
+            <div class="project-container">
+                <div class="project-carousel">
+                    <div class="project-group">
+                        <div class="project-card project-hero-card">
+                            <img src="https://github.com/shaircon/portfolio/blob/main/images/projects/MTB%20Logo.png?raw=true" alt="MyBox Project">
+                            <div class="project-hero-content">
+                                <h3>MYBOX</h3>
+                                <p>A digital marketing tool built for franchises with integrated campaigns and data tracking.</p>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <img src="https://drive.google.com/uc?export=view&id=16okdXV3Klc6D3rhMyQWVgdhIg112WXAB" alt="Fantasy Sports">
+                            <div class="project-card-content">
+                                <h3>FANTASY SPORTS</h3>
+                                <div class="subtitle">Product Management</div>
+                                <p>Led game experience design, mechanics, and monetization strategy.</p>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <img src="https://drive.google.com/uc?export=view&id=1qwiOxQXdicVa1WMp6CH2ndBryc1J0G9n" alt="System Features">
+                            <div class="project-card-content">
+                                <h3>PLATFORM SYSTEMS</h3>
+                                <div class="subtitle">Feature Design</div>
+                                <p>Designed core platform features and user systems.</p>
+                            </div>
+                        </div>
+                        <div class="project-card placeholder-card">
+                            <div class="project-card-content">
+                                <h3>MORE</h3>
+                                <div class="subtitle">Coming Soon</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-arrows">
+                    <div class="nav-arrow">←</div>
+                    <div class="nav-arrow">→</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3+ Years Projects -->
+        <section class="project-section">
+            <div class="section-label">3+ years</div>
+            <div class="project-container">
+                <div class="project-carousel">
+                    <div class="project-group">
+                        <div class="project-card project-hero-card">
+                            <img src="https://drive.google.com/uc?export=view&id=1EnnIRQ_GeKtu2CB6vE_HQExiqDEqvLFH" alt="Untamed Humans">
+                            <div class="project-hero-content">
+                                <h3>UNTAMED<br><em>humans</em></h3>
+                                <p>Led comprehensive brand management for individualized skincare.</p>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <img src="https://drive.google.com/uc?export=view&id=12MBJZcYmj_w0wmsNavebPCu8D-k6XYux" alt="Brand Design">
+                            <div class="project-card-content">
+                                <h3>BRAND DESIGN</h3>
+                                <div class="subtitle">Creative Direction</div>
+                                <p>Guided brand identity and visual design across touchpoints.</p>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <img src="https://drive.google.com/uc?export=view&id=1iuoBMuFMfJDQaGTZfan_5GmoBwBB5Edc" alt="Skincare Line">
+                            <div class="project-card-content">
+                                <h3>SKINCARE LINE</h3>
+                                <div class="subtitle">Product Development</div>
+                                <p>Managed product development from concept to launch.</p>
+                            </div>
+                        </div>
+                        <div class="project-card placeholder-card">
+                            <div class="project-card-content">
+                                <h3>MORE</h3>
+                                <div class="subtitle">Coming Soon</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-arrows">
+                    <div class="nav-arrow">←</div>
+                    <div class="nav-arrow">→</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1 Year Projects -->
+        <section class="project-section">
+            <div class="section-label">1 year</div>
+            <div class="project-container">
+                <div class="project-carousel">
+                    <div class="project-group">
+                        <div class="project-card project-hero-card">
+                            <img src="https://drive.google.com/uc?export=view&id=1KNowFzu_bj7i5bGILRHvfnsMeR0qyCFQ" alt="TF7 Logo">
+                            <div class="project-hero-content">
+                                <h3>TWENTY<br>FOUR<br>7</h3>
+                                <p>Experience design for modern lifestyle brand.</p>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <img src="https://drive.google.com/uc?export=view&id=1wPNsiV4EOrZY4MOA4QcM8KyLV5s8TfiB" alt="Friends Kit">
+                            <div class="project-card-content">
+                                <h3>FRIENDS WATCH PARTY KIT</h3>
+                                <div class="subtitle">Experience Design</div>
+                                <p>Created interactive entertainment experiences.</p>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <img src="https://drive.google.com/uc?export=view&id=1CJMGc12EDpJs8Br0EDbgrI5gQ7pYJz0K" alt="GOT Kit">
+                            <div class="project-card-content">
+                                <h3>GAME OF THRONES WATCH PARTY KIT</h3>
+                                <div class="subtitle">Experience Design</div>
+                                <p>Designed immersive viewing party experiences.</p>
+                            </div>
+                        </div>
+                        <div class="project-card placeholder-card">
+                            <div class="project-card-content">
+                                <h3>MORE</h3>
+                                <div class="subtitle">Coming Soon</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-arrows">
+                    <div class="nav-arrow">←</div>
+                    <div class="nav-arrow">→</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interests Section -->
+        <section class="interests-section">
+            <div class="interests-container">
+                <div class="logo-center">b</div>
+                <div class="interest-icons">
+                    <div class="interest-icon">
+                        <img src="https://drive.google.com/uc?export=view&id=1ixhofqJO9hh-QJ5IQaD3UMszmAxobdcF" alt="Mountain">
+                    </div>
+                    <div class="interest-icon">
+                        <img src="https://drive.google.com/uc?export=view&id=1CJMGc12EDpJs8Br0EDbgrI5gQ7pYJz0K" alt="Bike">
+                    </div>
+                    <div class="interest-icon">
+                        <img src="https://drive.google.com/uc?export=view&id=1wPNsiV4EOrZY4MOA4QcM8KyLV5s8TfiB" alt="Fish">
+                    </div>
+                    <div class="interest-icon">
+                        <img src="https://drive.google.com/uc?export=view&id=1Cxx-6jOA7dgBxeLlcvVDSMgFmUCeMkvM" alt="Camera">
+                    </div>
+                    <div class="interest-icon">
+                        <img src="https://drive.google.com/uc?export=view&id=1TKB8FKzAceJ6vlq6taAkUgVteF_o2B_6" alt="Tennis">
+                    </div>
+                    <div class="interest-icon">
+                        <img src="https://drive.google.com/uc?export=view&id=1gCz04BR0R1rLApji6MmIi-p1rvLnOFCs" alt="Hockey">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const interests = [
+            { name: "GeoGuessr", url: "https://geoguessr.com" },
+            { name: "NY Times Crosswords", url: "https://www.nytimes.com/crosswords" }
+        ];
+
+        function shuffleInterests() {
+            const randomInterest = interests[Math.floor(Math.random() * interests.length)];
+            const resultDiv = document.getElementById('shuffleResult');
+            resultDiv.innerHTML = `<a href="${randomInterest.url}" target="_blank">${randomInterest.name}</a>`;
+        }
+
+        // Scroll functionality for carousels
+        document.querySelectorAll('.nav-arrow').forEach(arrow => {
+            arrow.addEventListener('click', function() {
+                const carousel = this.parentElement.previousElementSibling;
+                const scrollAmount = 250;
+                
+                if (arrow.textContent === '←') {
+                    carousel.scrollLeft -= scrollAmount;
+                } else {
+                    carousel.scrollLeft += scrollAmount;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
