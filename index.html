@@ -57,6 +57,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: opacity 0.3s ease-in-out;
         }
 
         .hamburger {
@@ -572,31 +573,57 @@
         </section>
     </div>
 
-    <script>
-        const interests = [
-            { name: "GeoGuessr", url: "https://geoguessr.com" },
-            { name: "NY Times Crosswords", url: "https://www.nytimes.com/crosswords" }
-        ];
+   <script>
+    const interests = [
+        { name: "GeoGuessr", url: "https://geoguessr.com" },
+        { name: "NY Times Crosswords", url: "https://www.nytimes.com/crosswords" }
+    ];
 
-        function shuffleInterests() {
-            const randomInterest = interests[Math.floor(Math.random() * interests.length)];
-            const resultDiv = document.getElementById('shuffleResult');
-            resultDiv.innerHTML = `<a href="${randomInterest.url}" target="_blank">${randomInterest.name}</a>`;
-        }
+    function shuffleInterests() {
+        const randomInterest = interests[Math.floor(Math.random() * interests.length)];
+        const resultDiv = document.getElementById('shuffleResult');
+        resultDiv.innerHTML = `<a href="${randomInterest.url}" target="_blank">${randomInterest.name}</a>`;
+    }
 
-        // Scroll functionality for carousels
-        document.querySelectorAll('.nav-arrow').forEach(arrow => {
-            arrow.addEventListener('click', function() {
-                const carousel = this.parentElement.previousElementSibling;
-                const scrollAmount = 250;
-                
-                if (arrow.textContent === '←') {
-                    carousel.scrollLeft -= scrollAmount;
-                } else {
-                    carousel.scrollLeft += scrollAmount;
-                }
-            });
+    // Scroll functionality for carousels
+    document.querySelectorAll('.nav-arrow').forEach(arrow => {
+        arrow.addEventListener('click', function() {
+            const carousel = this.parentElement.previousElementSibling;
+            const scrollAmount = 250;
+            
+            if (arrow.textContent === '←') {
+                carousel.scrollLeft -= scrollAmount;
+            } else {
+                carousel.scrollLeft += scrollAmount;
+            }
         });
-    </script>
+    });
+
+    // Logo rotation functionality
+    function rotateLogo() {
+        const headerLogo = document.querySelector('.logo img');
+        const interestImages = [
+            'https://github.com/shaircon/portfolio/blob/main/images/logos-icons/b%20logo.png?raw=true',
+            'https://github.com/shaircon/portfolio/blob/main/images/interests/Mtn%20Image.png?raw=true',
+            'https://github.com/shaircon/portfolio/blob/main/images/interests/Bike%20Image.png?raw=true',
+            'https://github.com/shaircon/portfolio/blob/main/images/interests/Fish%20Image.png?raw=true',
+            'https://github.com/shaircon/portfolio/blob/main/images/interests/Camera%20Image.png?raw=true',
+            'https://github.com/shaircon/portfolio/blob/main/images/interests/Tennis%20Image.png?raw=true',
+            'https://github.com/shaircon/portfolio/blob/main/images/interests/Hockey%20Image.png?raw=true'
+        ];
+        
+        let currentIndex = 0;
+        
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % interestImages.length;
+            if (headerLogo) {
+                headerLogo.src = interestImages[currentIndex];
+            }
+        }, 1000);
+    }
+
+    // Start logo rotation when page loads
+    document.addEventListener('DOMContentLoaded', rotateLogo);
+</script>
 </body>
 </html>
