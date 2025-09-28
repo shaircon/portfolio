@@ -242,7 +242,41 @@
             opacity: 0.7;
             font-weight: 600;
         }
-       
+
+        /* Navigation Arrows */
+        .nav-arrows {
+            display: none; /* Hidden by default on desktop */
+            gap: 6px;
+            margin-top: 12px;
+            justify-content: center;
+        }
+        
+        .nav-arrow {
+            width: 32px;
+            height: 32px;
+            background: transparent;
+            border: none;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            padding: 0;
+        }
+        
+        .nav-arrow img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        
+        .nav-arrow:hover img {
+            opacity: 1;
+        }
+        
         /* Interest Icons Section */
         .interests-section {
             margin: 80px 40px 60px;
@@ -363,6 +397,12 @@
             .interests-container {
                 padding: 40px 20px;
             }
+
+            /* Show navigation arrows only on mobile */
+            .nav-arrows {
+                display: flex;
+            }
+        }
         
         /* Project card backgrounds */
         .project-card img {
@@ -433,6 +473,14 @@
                         </div>
                     </div>
                 </div>
+                <div class="nav-arrows">
+                    <div class="nav-arrow nav-left">
+                        <img src="https://github.com/shaircon/portfolio/blob/main/images/logos-icons/Left%20Arrow.png?raw=true" alt="Previous">
+                    </div>
+                    <div class="nav-arrow nav-right">
+                        <img src="https://github.com/shaircon/portfolio/blob/main/images/logos-icons/Right%20Arrow.png?raw=true" alt="Next">
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -471,6 +519,14 @@
                         </div>
                     </div>
                 </div>
+                <div class="nav-arrows">
+                    <div class="nav-arrow nav-left">
+                        <img src="https://github.com/shaircon/portfolio/blob/main/images/logos-icons/Left%20Arrow.png?raw=true" alt="Previous">
+                    </div>
+                    <div class="nav-arrow nav-right">
+                        <img src="https://github.com/shaircon/portfolio/blob/main/images/logos-icons/Right%20Arrow.png?raw=true" alt="Next">
+                    </div>
+                </div>
             </div>
          </section>
 
@@ -507,6 +563,14 @@
                                 <div class="subtitle">Coming Soon</div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="nav-arrows">
+                    <div class="nav-arrow nav-left">
+                        <img src="https://github.com/shaircon/portfolio/blob/main/images/logos-icons/Left%20Arrow.png?raw=true" alt="Previous">
+                    </div>
+                    <div class="nav-arrow nav-right">
+                        <img src="https://github.com/shaircon/portfolio/blob/main/images/logos-icons/Right%20Arrow.png?raw=true" alt="Next">
                     </div>
                 </div>
             </div>
